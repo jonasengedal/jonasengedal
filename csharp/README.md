@@ -42,6 +42,8 @@ public record Person
 }
 ```
 
+Sample code is taken from [Dixin's Blog](https://weblogs.asp.net/dixin/csharp-10-new-feature-callerargumentexpression-argument-check-and-more).
+
 ### Assertion and logging
 
 Used in assertion and logging.
@@ -71,3 +73,5 @@ Log(Math.Min(Environment.ProcessorCount, x));
 // Compiled to:
 Log(Math.Min(Environment.ProcessorCount, x), "Math.Min(Environment.ProcessorCount, x)");
 ```
+
+Sample code is taken from [Dixin's Blog](https://weblogs.asp.net/dixin/csharp-10-new-feature-callerargumentexpression-argument-check-and-more).
