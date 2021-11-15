@@ -1,6 +1,3 @@
-# GitTools
-This project contain various scripts and tools making life easier with Git
-
 # Commonly used commands
 
 Add all files to stage
@@ -18,6 +15,7 @@ git reset
 ```
 
 ## Working with branches
+
 Create a local branch based on local master and set the local branch to track a new remote branch.
 
 ```bash
