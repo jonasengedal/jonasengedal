@@ -59,6 +59,23 @@ git stash apply 0
 
 ## Working with local commits
 
+### Move local commits to other local branch
+
+When the local commits on master have not been pushed to remote master. In this example to latest 2 commits will be moved to newbranch. A sha1-of-commit can also be used instead of the commit index.
+
+NOTE: This approach required that the HEAD~3 commit have been pushed to remote master and that HEAD~1-2 has not been pushed to remote master. See [this](https://stackoverflow.com/questions/1628563/move-the-most-recent-commits-to-a-new-branch-with-git) for details on why.
+
+```bash
+#!/bin/bash
+git checkout master
+git log
+# note down how many commits should be moved. 
+git checkout -b newbranch HEAD~2
+git merge master
+git checkout master
+git reset --hard HEAD~2
+```
+
 ### Interactive rebase
 
 Use interactive rebase to rewrite your LOCAL commit history. Remember to NEVER rewrite your local commit history if the commits have already been pushed to a remote/shared repository.
