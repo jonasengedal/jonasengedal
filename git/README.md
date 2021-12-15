@@ -59,6 +59,22 @@ git stash apply 0
 
 ## Working with local commits
 
+### Delete local commits
+
+Delete local commits that have not already been pushed to master.
+
+```bash
+#!/bin/bash
+git reset --hard HEAD^
+```
+
+Delete local commits that have not already been pushed to master and keep the changes locally.
+
+```bash
+#!/bin/bash
+git reset --soft HEAD^
+```
+
 ### Move local commits to other local branch
 
 When the local commits on master have not been pushed to remote master. In this example to latest 2 commits will be moved to newbranch. A sha1-of-commit can also be used instead of the commit index.
