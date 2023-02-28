@@ -59,6 +59,20 @@ git stash apply 0
 
 ## Working with local commits
 
+### Reset last commit ###
+
+Reset last commit whil keeping the changes made in the commit.
+
+```bash
+git reset --soft HEAD~1
+```
+
+Reset/undo last commit while deleting the changes made in the commit.
+
+```bash
+git reset --reset HEAD~1
+```
+
 ### Move local commits to other local branch
 
 When the local commits on master have not been pushed to remote master. In this example to latest 2 commits will be moved to newbranch. A sha1-of-commit can also be used instead of the commit index.
