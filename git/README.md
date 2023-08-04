@@ -73,6 +73,20 @@ Delete local commits that have not already been pushed to master and keep the ch
 ```bash
 #!/bin/bash
 git reset --soft HEAD^
+
+### Reset last commit ###
+
+Reset last commit whil keeping the changes made in the commit.
+
+```bash
+git reset --soft HEAD~1
+```
+
+Reset/undo last commit while deleting the changes made in the commit.
+
+```bash
+git reset --reset HEAD~1
+
 ```
 
 ### Move local commits to other local branch
