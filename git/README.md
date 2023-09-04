@@ -47,6 +47,13 @@ Prune tracking branches no longer present at remote.
 git remote prune origin
 ```
 
+Set remote url
+```bash
+#!/bin/bash
+#git remote set-url <remote-name> <remote-url>
+git remote set-url origin https://[jonasengedal@]github.com/jonasengedal/jonasengedal.git
+```
+
 ## Working with stash
 
 ```bash
