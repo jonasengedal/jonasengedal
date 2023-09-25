@@ -48,6 +48,7 @@ git remote prune origin
 ```
 
 Set remote url
+
 ```bash
 #!/bin/bash
 #git remote set-url <remote-name> <remote-url>
