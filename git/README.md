@@ -116,6 +116,28 @@ git checkout master
 git reset --hard HEAD~2
 ```
 
+### Rebase
+
+If you are merging Github PRs using Squash and Merge, and you have created branches based of another local branch that was merged to main, then merging main to a feature branch will lead to many merge issues as the feature branch is having commits that are not present in main. In this case you need to use the rebase command to replay your local commits on top of the main commit history.
+
+```bash
+#!/bin/bash
+git branch feature-branch-backup
+git checkout main
+git pull
+git checkout feature-branch
+git rebase main
+# if merge conflicts occur then fix them manually and run
+# git add path/to/conflicted/file.txt
+# git rebase --continue
+# or to abort rebase run
+# git rebase --abort
+
+# if you have already pushed the feature branch to origin then you need to force push to change the origin commit history
+# CAUTION: Only do this if no other has pulled the feature branch
+git push origin --force feature-branch
+```
+
 ### Interactive rebase
 
 Use interactive rebase to rewrite your LOCAL commit history. Remember to NEVER rewrite your local commit history if the commits have already been pushed to a remote/shared repository.
