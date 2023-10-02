@@ -11,5 +11,5 @@ Function gitpushoriginfunc { $b = git branch --show-current; git push origin -u 
 Set-Alias -Name gitpushorigin -Value gitpushoriginfunc -Scope Global
 Function gitmergemainfunc { $b = git branch --show-current; git checkout main; git pull; git checkout $b; git merge main }
 Set-Alias -Name gitmergemain -Value gitmergemainfunc -Scope Global
-Function gitrebasemainfunc { $b = git branch --show-current; git branch $b-backup; git checkout main; git pull; git checkout $b; git rebase main }
+Function gitrebasemainfunc { $b = git branch --show-current; git branch "$b-backup-$(Get-Date -f "HHmmss")"; $c = git stash create; git reset --hard; git checkout main; git pull; git checkout $b; git rebase main; if ($c) { git stash apply $c } }
 Set-Alias -Name gitrebasemain -Value gitrebasemainfunc -Scope Global
