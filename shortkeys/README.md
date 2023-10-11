@@ -30,3 +30,9 @@ Another shorter list is available [here](https://bloomfield.edu/help-desk/20-win
 | Windows+1-9 | Open/GoTo application at the n-th position in the Task bar |
 | Windows+Shift+1-9 | Open another instance of the application at the n-th position in the Task bar |
 | Windows+Alt+1-9 | Open the jump list of the application at the n-th position in the Task bar |
+
+## Chrome
+
+| Short Key | Description |
+| --------- | ----------- |
+| Ctrl+Shift+O | Open Bookmarks Manager |
