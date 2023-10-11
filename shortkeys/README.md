@@ -36,3 +36,4 @@ Another shorter list is available [here](https://bloomfield.edu/help-desk/20-win
 | Short Key | Description |
 | --------- | ----------- |
 | Ctrl+Shift+O | Open Bookmarks Manager |
+| F6 | Shifts focus between Bookmark toolbar, Address bar and Tabs
