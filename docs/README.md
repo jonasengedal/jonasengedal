@@ -66,7 +66,7 @@
 * [DateTime as a Value Object](https://ardalis.com/datetime-as-a-value-object/)
 * [Refactoring to Value Objects](https://ardalis.com/refactoring-value-objects/)
 * [Support for Value Objects in C#](https://ardalis.com/support-for-value-objects-in-csharp/)
-*[https://ardalis.com/listing-strongly-typed-enum-options-in-c/](https://ardalis.com/listing-strongly-typed-enum-options-in-c/)
+* [Listing Strongly Typed Enum Options in C#](https://ardalis.com/listing-strongly-typed-enum-options-in-c/)
 * [Prefer Custom Exceptions](https://www.weeklydevtips.com/episodes/007)
 * [Encapsulating Collection Properties](https://www.weeklydevtips.com/episodes/011)
 * [Smarter Enumerations](https://www.weeklydevtips.com/episodes/014)
