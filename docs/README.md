@@ -1,5 +1,16 @@
 # Software Development Craftmanship
 
+## References
+
+* [Code Opinion](https://codeopinion.com/)
+* [Ardalis](https://ardalis.com/)
+* [Weekly Dev Tips](https://www.weeklydevtips.com/)
+* [Ardalis GitHub](https://github.com/ardalis)
+    * [CleanArchitecture](https://github.com/ardalis/CleanArchitecture)
+    * [EFCore.Extensions](https://github.com/ardalis/EFCore.Extensions)
+    * [CleanArchitecture.WorkerService](https://github.com/ardalis/CleanArchitecture.WorkerService)
+    * [Specification](https://github.com/ardalis/Specification)
+
 ## Code Style
 
 * [Improving Method and Function Clarity](https://ardalis.com/improving-method-function-clarity/)
@@ -36,6 +47,7 @@
 * [Boundaries within software systems](https://www.weeklydevtips.com/episodes/boundaries-with-guest-james-hickey)
 * [Finding service boundaries, illustrated in healthcare](https://particular.net/videos/finding-service-boundaries-illustrated-in-healthcare?utm_source=codeopinion&utm_medium=paid&utm_term=clean_architecture&utm_content=additonal_resources&utm_campaign=blog_sponsor)
 * [Versioning Software](https://www.weeklydevtips.com/episodes/versioning-with-guest-jon-skeet)
+* [Focusing on “Entities” leads nowhere good.](https://codeopinion.com/focusing-on-entities-leads-nowhere-good/)
 
 ## API
 
