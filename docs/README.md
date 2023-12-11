@@ -3,13 +3,15 @@
 ## References
 
 * [Code Opinion](https://codeopinion.com/)
-* [Ardalis](https://ardalis.com/)
+* [Ardalis Blog](https://ardalis.com/blog)
+* [Enterprise Craftmanship Blog](https://enterprisecraftsmanship.com/posts)
 * [Weekly Dev Tips](https://www.weeklydevtips.com/)
-* [Ardalis GitHub](https://github.com/ardalis)
-    * [CleanArchitecture](https://github.com/ardalis/CleanArchitecture)
-    * [EFCore.Extensions](https://github.com/ardalis/EFCore.Extensions)
-    * [CleanArchitecture.WorkerService](https://github.com/ardalis/CleanArchitecture.WorkerService)
-    * [Specification](https://github.com/ardalis/Specification)
+* GitHub repositories
+    * [Ardalis CleanArchitecture](https://github.com/ardalis/CleanArchitecture)
+    * [Ardalis EFCore.Extensions](https://github.com/ardalis/EFCore.Extensions)
+    * [Ardalis CleanArchitecture.WorkerService](https://github.com/ardalis/CleanArchitecture.WorkerService)
+    * [Ardalis Specification](https://github.com/ardalis/Specification)
+    * [eShop Reference Application](https://github.com/dotnet/eShop)
 
 ## Code Style
 
@@ -38,6 +40,7 @@
 ## Design
 
 * [Clean Architecture](https://ardalis.com/tags/clean-architecture/)
+* [.NET Microservices: Architecture for Containerized .NET Applications](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/)
 * [Should Controllers Reference Repositories or Services](https://ardalis.com/should-controllers-reference-repositories-services/)
 * [Comparing Techniques for Communicating Between Services](https://ardalis.com/comparing-techniques-communicating-between-services/)
 * [Prioritizing and Microservices](https://ardalis.com/prioritizing-and-microservices/)

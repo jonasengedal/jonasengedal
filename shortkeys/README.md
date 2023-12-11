@@ -11,7 +11,7 @@
 
 ## Visual Studio
 
-| Short Key | Description |
+| Shortcut | Description |
 | --------- | ----------- |
 | Ctrl+Alt+L | Open/Close Solution Explorer |
 | Ctrl+R > T | Run Tests |
@@ -25,7 +25,7 @@
 A elaborated list of Windows shortcuts is available at [this Microsoft page](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec).
 Another shorter list is available [here](https://bloomfield.edu/help-desk/20-windows-shortcuts).
 
-| Short Key | Description |
+| Shortcut | Description |
 | --------- | ----------- |
 | Windows+1-9 | Open/GoTo application at the n-th position in the Task bar |
 | Windows+Shift+1-9 | Open another instance of the application at the n-th position in the Task bar |
@@ -33,7 +33,12 @@ Another shorter list is available [here](https://bloomfield.edu/help-desk/20-win
 
 ## Chrome
 
-| Short Key | Description |
+| Shortcut | Description |
 | --------- | ----------- |
 | Ctrl+Shift+O | Open Bookmarks Manager |
 | F6 | Shifts focus between Bookmark toolbar, Address bar and Tabs
+
+## Keyboard Layout
+
+| Key | Type | Usage |
+| Ctrl | Hold | * stuff |
