@@ -1,5 +1,5 @@
-# Place this file in ~/Powershell
-# The variable $profile contain the location of this file
+# The variable $profile contain the location of this file on the computer
+# You can use the script Microsoft.PowerShell_profile.ps1 to deploy it
 Import-Module posh-git
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme paradox
