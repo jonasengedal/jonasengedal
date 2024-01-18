@@ -31,7 +31,7 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "defaultProfile": "{9869dcf6-5c4b-49f7-8d5b-0924d9d00ba4}",
     "newTabMenu": 
     [
         {
@@ -40,9 +40,24 @@
     ],
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "font": 
+            {
+                "face": "Cascadia Code PL",
+                "size": 12.0
+            }
+        },
         "list": 
         [
+            {
+                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+                "guid": "{9869dcf6-5c4b-49f7-8d5b-0924d9d00ba4}",
+                "hidden": false,
+                "name": "src",
+                "startingDirectory": "D:/src",
+                "tabTitle": "Src"
+            },
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -297,5 +312,6 @@
             "yellow": "#808000"
         }
     ],
+    "startupActions": "new-tab -p src;",
     "themes": []
 }
