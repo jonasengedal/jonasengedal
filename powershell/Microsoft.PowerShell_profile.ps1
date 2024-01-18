@@ -5,7 +5,7 @@ Import-Module oh-my-posh
 Set-PoshPrompt -Theme paradox
 
 # Create aliases for common git commands
-function gcheckout { 
+function gco { 
     [CmdletBinding()]
     param (
         [Parameter(Position = 1, Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
@@ -16,18 +16,8 @@ function gcheckout {
         git pull
     }
 }
-function gco { 
-    [CmdletBinding()]
-    param (
-        [Parameter(Position = 1, Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-        [string]$Branch
-    )
-    PROCESS {
-        gcheckout $Branch
-    }
-}
 
-function gstash {
+function gs {
     [CmdletBinding()]
     param (
         [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
@@ -37,25 +27,12 @@ function gstash {
         git stash -u -m $Message
     }
 }
-function gs {
-    [CmdletBinding()]
-    param (
-        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-        [string]$Message
-    )
-    PROCESS {
-        gstash $Message
-    }
-}
 
-function gstashlist {
+function gsl {
     return git stash list
 }
-function gsl {
-    return gstashlist
-}
 
-function gstashpop {
+function gsp {
     [CmdletBinding()]
     param (
         [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
@@ -65,18 +42,8 @@ function gstashpop {
         git stash pop $Index
     }
 }
-function gsp {
-    [CmdletBinding()]
-    param (
-        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-        [string]$Index
-    )
-    PROCESS {
-        gstashpop $Index
-    }
-}
 
-function gstashdrop {
+function gsd {
     [CmdletBinding()]
     param (
         [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
@@ -86,18 +53,8 @@ function gstashdrop {
         git stash drop $Index
     }
 }
-function gsd {
-    [CmdletBinding()]
-    param (
-        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-        [string]$Index
-    )
-    PROCESS {
-        gstashdrop $Index
-    }
-}
 
-function gresethard {
+function grh {
     [CmdletBinding(SupportsShouldProcess,
         ConfirmImpact = 'High')]
     param (
@@ -110,18 +67,8 @@ function gresethard {
         }    
     }
 }
-function grh {
-    [CmdletBinding()]
-    param (
-        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-        [string]$Commit
-    )
-    PROCESS {
-        gresethard $Commit
-    }
-}
 
-function gresetsoft {
+function grs {
     [CmdletBinding(SupportsShouldProcess,
         ConfirmImpact = 'High')]
     param (
@@ -134,30 +81,15 @@ function gresetsoft {
         }    
     }
 }
-function grs {
-    [CmdletBinding()]
-    param (
-        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-        [string]$Commit
-    )
-    PROCESS {
-        gresetsoft $Commit
-    }
-}
 
 function gmain { git checkout main; git pull }
 Set-Alias -Name gmain -Value gmain -Scope Global
-function gpull { git pull }
-Set-Alias -Name gpl -Value gpull -Scope Global
-function gpush { git push }
-Set-Alias -Name gph -Value gpush -Scope Global
-function gpushorigin { $b = git branch --show-current; git push origin -u $b }
-Set-Alias -Name gpo -Value gpushorigin -Scope Global
-function gmergemain { $b = git branch --show-current; git checkout main; git pull; git checkout $b; git merge main }
-Set-Alias -Name gmm -Value gmergemain -Scope Global
-function grebasemain { $b = git branch --show-current; git branch "$b-backup-$(Get-Date -f "HHmmss")"; $c = git stash create; git reset --hard; git checkout main; git pull; git checkout $b; git rebase main; if ($c) { git stash apply $c } }
-Set-Alias -Name grm -Value grebasemain -Scope Global
-function dockerpostgres { 
+function gpl { git pull }
+function gph { git push }
+function gpo { $b = git branch --show-current; git push origin -u $b }
+function gmm { $b = git branch --show-current; git checkout main; git pull; git checkout $b; git merge main }
+function grm { $b = git branch --show-current; git branch "$b-backup-$(Get-Date -f "HHmmss")"; $c = git stash create; git reset --hard; git checkout main; git pull; git checkout $b; git rebase main; if ($c) { git stash apply $c } }
+function dpostgres { 
     $cN = "local-postgres"; 
     $c = docker ps -a | Select-String $cN; 
     if (-not $c) { 
@@ -168,4 +100,3 @@ function dockerpostgres {
     }
     docker ps -a | Select-String $cN
 }
-Set-Alias -Name dpostgres -Value dockerpostgres -Scope Global
