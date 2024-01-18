@@ -27,6 +27,76 @@ function gco {
     }
 }
 
+function gstash {
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Message
+    )
+    PROCESS {
+        git stash -u -m $Message
+    }
+}
+function gs {
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Message
+    )
+    PROCESS {
+        gstash $Message
+    }
+}
+
+function gstashlist {
+    return git stash list
+}
+function gsl {
+    return gstashlist
+}
+
+function gstashpop {
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [Int32]$Index
+    )
+    PROCESS {
+        git stash pop $Index
+    }
+}
+function gsp {
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Index
+    )
+    PROCESS {
+        gstashpop $Index
+    }
+}
+
+function gstashdrop {
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [Int32]$Index
+    )
+    PROCESS {
+        git stash drop $Index
+    }
+}
+function gsd {
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Index
+    )
+    PROCESS {
+        gstashdrop $Index
+    }
+}
+
 function gresethard {
     [CmdletBinding(SupportsShouldProcess,
         ConfirmImpact = 'High')]
