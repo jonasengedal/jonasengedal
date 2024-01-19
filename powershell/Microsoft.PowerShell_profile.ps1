@@ -1,10 +1,10 @@
 # The variable $profile contain the location of this file on the computer
-# You can use the script Microsoft.PowerShell_profile.ps1 to deploy it
+# You can use the script Deploy.PowerShell_profile.ps1 to deploy it
 Import-Module posh-git
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme paradox
 
-# Create aliases for common git commands
+# Create shortkey functions for common git commands
 function gco { 
     [CmdletBinding()]
     param (
@@ -83,7 +83,6 @@ function grs {
 }
 
 function gmain { git checkout main; git pull }
-Set-Alias -Name gmain -Value gmain -Scope Global
 function gpl { git pull }
 function gph { git push }
 function gpo { $b = git branch --show-current; git push origin -u $b }
