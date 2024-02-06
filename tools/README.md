@@ -9,7 +9,8 @@ Tools and packages are managed mainly using [Winget](https://learn.microsoft.com
 List packages managed by Winget.
 
 ```bash
-winget list
+# winget list does not support ordering out of the box. Need to do this hack
+$nameVar = winget list ; $namevar[4..($namevar.length)] | Sort-Object | Format-Table
 ```
 
 ### Chocolatey
