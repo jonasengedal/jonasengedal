@@ -18,14 +18,14 @@ error NU1301: Unable to load the service index for source https://pkgs.dev.azure
 
 You need to at least the following `NuGet.config` file:
 
-- `%AppData%\Roaming\NuGet\NuGet.Config`
+- `%AppData%\NuGet\NuGet.Config`
 
 You can consider to also have the below `NuGet.config` files to override or add project specific configurations:
 
 - `C:\src\NuGet.Config`
 - `C:\src\domeva\NuGet.config`
 
-`%AppData%\Roaming\NuGet\NuGet.Config` is shared between all projects and will, depending on your credential provider, contain the credentials for NuGet package repositories.
+`%AppData%\NuGet\NuGet.Config` is shared between all projects and will, depending on your credential provider, contain the credentials for NuGet package repositories.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,7 +45,7 @@ You can consider to also have the below `NuGet.config` files to override or add 
     <add key="NuGet" value="https://api.nuget.org/v3/index.json" />
     <add key="Microsoft Visual Studio Offline Packages" value="C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\" />
     <add key="Domeva" value="https://nuget.pkg.github.com/jonasengedal/index.json" />
-    <add key="LocalNuGet_Prerelease" value="C:\src\LocalNuGetPrerelease" />
+    <add key="LocalNuGetPrerelease" value="C:\src\LocalNuGetPrerelease" />
   </packageSources>
   <packageSourceCredentials>
     <Domeva>
@@ -65,6 +65,9 @@ You can consider to also have the below `NuGet.config` files to override or add 
    <package pattern="*" />
   </packageSource>
   <packageSource key="Domeva">
+   <package pattern="Domeva.*" />
+  </packageSource>
+  <packageSource key="LocalNuGetPrerelease">
    <package pattern="Domeva.*" />
   </packageSource>
  </packageSourceMapping>
