@@ -3,9 +3,13 @@ param(
     [bool]$Install = $false
 )
 
-$chocoApps = @('k9s', 'kubernetes-cli')
+$chocoApps = @(
+    'k9s', 
+    'kubernetes-cli',
+    'openssl')
 
 $wingetApps = @(
+    'Bruno.Bruno',
     'dbeaver.dbeaver',
     'Git.Git',
     'Google.Chrome',
