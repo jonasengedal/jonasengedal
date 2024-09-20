@@ -142,3 +142,28 @@ git push origin --force feature-branch
 
 Use interactive rebase to rewrite your LOCAL commit history. Remember to NEVER rewrite your local commit history if the commits have already been pushed to a remote/shared repository.
 See [Interactive Rebase: Clean up yout Commit History](https://css-tricks.com/interactive-rebase-clean-up-your-commit-history/) for examples.
+
+## Revert commits
+
+Sometimes you have committed changes that have to be reverted and fixed before they can be committed again.
+If using GitHub, the GitHub has the option of reverting a PR. Using this option will revert all the commits in the PR by creating a new commit which will include the reverse changes of the changes done the commits that is reverted.
+
+The following commands will revert a set of commits by creating a new revert commit.
+
+```bash
+git checkout main
+git pull
+git checkout -b bugfix/revert-branch
+git revert commit1,commit2,commit3
+git push -u origin bugfix/revert-branch
+```
+
+If you want to fix the reverted changes then you can revert the previously created revert commit. This time you might not want to automatically creat a revert commit as you will want to fix the bug that caused the revert.
+
+```bash
+git checkout main
+git pull
+git checkout -b bugfix/fix-a-bug-branch
+git revert commit1,commit2,commit3 --no-commit
+git push -u origin bugfix/fix-a-bug-branch
+```
