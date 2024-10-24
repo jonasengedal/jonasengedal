@@ -116,6 +116,8 @@ function Remove-GitBranchesNotInRemote {
         ConfirmImpact = 'High')]
     param()
     PROCESS{
+        git branch -v | findstr "\[gone\]"
+
         if ($PSCmdlet.ShouldProcess('Delete branches not in remote even when NOT fully merged')) {
             git branch -v | findstr "\[gone\]" | ForEach-Object { git branch -D $_.split(" ")[2] }
         }
@@ -129,6 +131,22 @@ function gbd {
     Remove-GitBranchesNotInRemote -Confirm
 }
 
+function Remove-GitBranchesThatAreBackups {
+    [CmdletBinding(SupportsShouldProcess,
+        ConfirmImpact = 'High')]
+    param()
+    PROCESS {
+        git branch -l *-backup-*
+
+        if ($PSCmdlet.ShouldProcess('Delete branches that contain "-backup-" in the name')) {
+            git branch -l *-backup-* | ForEach-Object { git branch -D $_.split(' ')[2] }
+        }
+    }
+}
+
+function gbdb {
+    Remove-GitBranchesThatAreBackups -Confirm
+}
 function gmain { git checkout main; git pull }
 function gdev { git checkout dev; git pull }
 function gpl { git pull }
