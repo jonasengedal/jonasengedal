@@ -74,3 +74,9 @@ Get process name with id `10368`.
 ```bash
 tasklist /fi "pid eq 10368"
 ```
+
+If a port cannot be made available then you can change the host port which the docker process will listen to
+
+```bash
+docker run --name local-postgres -e POSTGRES_PASSWORD=Password123 -p 15432:5432 -d postgres
+```
