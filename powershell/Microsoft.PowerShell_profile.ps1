@@ -12,8 +12,19 @@ function gco {
         [string]$Branch
     )
     PROCESS {
-        git checkout main
+        git checkout $Branch
         git pull
+    }
+}
+
+function gcn { 
+    [CmdletBinding()]
+    param (
+        [Parameter(Position = 1, Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Branch
+    )
+    PROCESS {
+        git checkout -b $Branch
     }
 }
 
@@ -83,9 +94,11 @@ function grs {
 }
 
 function gmain { git checkout main; git pull }
+function gdev { git checkout dev; git pull }
 function gpl { git pull }
 function gph { git push }
 function gpo { $b = git branch --show-current; git push origin -u $b }
+function gmd { $b = git branch --show-current; git checkout dev; git pull; git checkout $b; git merge dev }
 function gmm { $b = git branch --show-current; git checkout main; git pull; git checkout $b; git merge main }
 function grm { $b = git branch --show-current; git branch "$b-backup-$(Get-Date -f "HHmmss")"; $c = git stash create; git reset --hard; git checkout main; git pull; git checkout $b; git rebase main; if ($c) { git stash apply $c } }
 function dpostgres { 
