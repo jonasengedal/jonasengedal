@@ -65,7 +65,7 @@ function gsd {
     }
 }
 
-function grh {
+function Update-GitBranchRestHard {
     [CmdletBinding(SupportsShouldProcess,
         ConfirmImpact = 'High')]
     param (
@@ -79,7 +79,16 @@ function grh {
     }
 }
 
-function grs {
+function grh {
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Commit = "HEAD^"
+    )
+
+    Update-GitBranchRestHard $Commit -Confirm
+}
+
+function Update-GitBranchRestSoft {
     [CmdletBinding(SupportsShouldProcess,
         ConfirmImpact = 'High')]
     param (
@@ -87,10 +96,37 @@ function grs {
         [string]$Commit = "HEAD^"
     )
     PROCESS {
-        if ($PSCmdlet.ShouldProcess('RESET HARD')) {
+        if ($PSCmdlet.ShouldProcess('RESET SOFT')) {
             git reset --soft $Commit
         }    
     }
+}
+
+function grs {
+    param (
+        [Parameter(Position = 1, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [string]$Commit = "HEAD^"
+    )
+
+    Update-GitBranchRestSoft $Commit -Confirm
+}
+
+function Remove-GitBranchesNotInRemote {
+    [CmdletBinding(SupportsShouldProcess,
+        ConfirmImpact = 'High')]
+    param()
+    PROCESS{
+        if ($PSCmdlet.ShouldProcess('Delete branches not in remote even when NOT fully merged')) {
+            git branch -v | findstr "\[gone\]" | ForEach-Object { git branch -D $_.split(" ")[2] }
+        }
+        else{
+            git branch -v | findstr "\[gone\]" | ForEach-Object { git branch -d $_.split(" ")[2] }
+        }
+    }
+}
+
+function gbd {
+    Remove-GitBranchesNotInRemote -Confirm
 }
 
 function gmain { git checkout main; git pull }
