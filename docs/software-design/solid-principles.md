@@ -1,10 +1,8 @@
-# Software Design #
-
-## SOLID Principles ##
+# SOLID Principles #
 
 The **SOLID** principles are a set of five guidelines for writing maintainable and scalable object-oriented software. Each principle addresses specific challenges in software design, promoting cleaner, more modular code.
 
-### Summary of SOLID Principles ###
+## Summary of SOLID Principles ##
 
 1. **SRP**: A class should have one and only one reason to change.
 2. **OCP**: Extend functionality without modifying existing code.
@@ -12,10 +10,9 @@ The **SOLID** principles are a set of five guidelines for writing maintainable a
 4. **ISP**: Avoid forcing classes to implement irrelevant methods.
 5. **DIP**: Depend on abstractions, not concrete implementations.
 
-### 1. Single Responsibility Principle (SRP) ###
+## 1. Single Responsibility Principle (SRP) ##
 
 **Definition**: A class should have only one reason to change, meaning it should only have one responsibility.
-
 
 ```csharp
 // Without SRP: A single class handling both user management and notification
@@ -50,7 +47,7 @@ public class EmailNotifier
 }
 ```
 
-### 2. Open/Closed Principle (OCP) ###
+## 2. Open/Closed Principle (OCP) ##
 
 **Definition**: Classes should be open for extension but closed for modification.
 
@@ -98,7 +95,7 @@ public class DiscountCalculator
 }
 ```
 
-### 3. Liskov Substitution Principle (LSP) ###
+## 3. Liskov Substitution Principle (LSP) ##
 
 **Definition**: Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
 
@@ -143,7 +140,7 @@ public class Penguin : Bird
 }
 ```
 
-### 4. Interface Segregation Principle (ISP) ###
+## 4. Interface Segregation Principle (ISP) ##
 
 **Definition**: A class should not be forced to implement interfaces it does not use.
 
@@ -202,7 +199,7 @@ public class Robot : IWorkable
 }
 ```
 
-### 5. Dependency Inversion Principle (DIP) ###
+## 5. Dependency Inversion Principle (DIP) ##
 
 **Definition**: High-level modules should not depend on low-level modules. Both should depend on abstractions.
 
