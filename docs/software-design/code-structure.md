@@ -1,9 +1,9 @@
 
-# Code Structure #
+# Code Structure
 
 When structuring .NET APIs, choosing **Vertical/Feature Slices** over a **Functional Structure** can lead to better organization and scalability in certain scenarios. Below is an explanation of the two approaches and the reasons why Vertical/Feature Slices are often preferred:
 
-## Functional Structure ##
+## Functional Structure
 
 In a **Functional Structure**, code is organized by technical functions or layers, such as Controllers, Services, and Repositories. 
 
@@ -32,7 +32,7 @@ In a **Functional Structure**, code is organized by technical functions or layer
 - **Cross-Cutting Features**: Adding a feature requires touching multiple folders, making changes harder to track.
 - **Scaling Challenges**: As the project grows, the structure becomes cluttered, with files scattered across layers.
 
-## **Vertical/Feature Slices** ##
+## **Vertical/Feature Slices**
 
 In a **Vertical/Feature Slice** structure, code is organized by feature or business domain, grouping related components together.
 
@@ -82,7 +82,7 @@ In a **Vertical/Feature Slice** structure, code is organized by feature or busin
 - **Initial Learning Curve**: Developers unfamiliar with the structure might need time to adjust.
 - **Potential Duplication**: If not managed carefully, common logic might be duplicated across features.
 
-## **Comparison: When to Choose Vertical Slices** ##
+## **Comparison: When to Choose Vertical Slices**
 
 | Aspect                       | Functional Structure       | Vertical/Feature Slices |
 |------------------------------|---------------------------|--------------------------|
@@ -93,6 +93,6 @@ In a **Vertical/Feature Slice** structure, code is organized by feature or busin
 | **Testing and Maintenance**  | Distributed logic         | Localized per feature    |
 | **Refactoring**              | Complex and interdependent | Easier and isolated      |
 
-### **Conclusion** ###
+## **Conclusion**
 
 **Vertical/Feature Slices** are especially advantageous for medium-to-large projects or when working in agile teams where features are added incrementally. By grouping all components of a feature together, this approach improves clarity, maintainability, and scalability. While Functional Structure might be suitable for small or simple projects, adopting Vertical/Feature Slices early can save significant time and effort as the project grows.

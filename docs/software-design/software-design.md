@@ -1,6 +1,6 @@
-# Software Design #
+# Software Design
 
-## Content ##
+## Content
 
 - [SOLID Principles](./solid-principles.md)
 - [Code Structure](code-structure.md)
