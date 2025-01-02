@@ -11,7 +11,7 @@
 - [Agile Process](./docs/agile-process.md)
 - [Tooling](./docs/tooling.md)
 - [System Architecture](./docs/system-architecture.md)
-- [Software Design](./docs/software-design.md)
+- [Software Design](./docs/software-design/software-design.md)
 - [Testing](./docs/software-testing.md)
 
 
