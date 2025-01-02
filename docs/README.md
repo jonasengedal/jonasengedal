@@ -2,16 +2,17 @@
 
 ## References
 
-* [Code Opinion](https://codeopinion.com/)
 * [Ardalis Blog](https://ardalis.com/blog)
-* [Enterprise Craftmanship Blog](https://enterprisecraftsmanship.com/posts)
 * [Weekly Dev Tips](https://www.weeklydevtips.com/)
+* [Dev IQ](https://deviq.com)
+* [Code Opinion](https://codeopinion.com/)
+* [Enterprise Craftmanship Blog](https://enterprisecraftsmanship.com/posts)
 * GitHub repositories
-    * [Ardalis CleanArchitecture](https://github.com/ardalis/CleanArchitecture)
-    * [Ardalis EFCore.Extensions](https://github.com/ardalis/EFCore.Extensions)
-    * [Ardalis CleanArchitecture.WorkerService](https://github.com/ardalis/CleanArchitecture.WorkerService)
-    * [Ardalis Specification](https://github.com/ardalis/Specification)
-    * [eShop Reference Application](https://github.com/dotnet/eShop)
+  * [Ardalis CleanArchitecture](https://github.com/ardalis/CleanArchitecture)
+  * [Ardalis EFCore.Extensions](https://github.com/ardalis/EFCore.Extensions)
+  * [Ardalis CleanArchitecture.WorkerService](https://github.com/ardalis/CleanArchitecture.WorkerService)
+  * [Ardalis Specification](https://github.com/ardalis/Specification)
+  * [eShop Reference Application](https://github.com/dotnet/eShop)
 
 ## Code Style
 
