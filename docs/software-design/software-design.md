@@ -2,5 +2,5 @@
 
 ## Content
 
-- [SOLID Principles](./solid-principles.md)
-- [Code Structure](code-structure.md)
+- [Software Development Principles](./software-principles.md)
+- [Code Structure](./code-structure.md)
