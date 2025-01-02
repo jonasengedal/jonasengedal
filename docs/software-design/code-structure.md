@@ -18,6 +18,12 @@ Projects in a solution:
 
 All with TestSupport
 
+## Assembly IoC Dependency Discovery
+
+Automated assembly dependency discovery simplifies the process of configuring dependency injection by scanning assemblies for classes and interfaces, identifying their relationships through custom attributes. These attributes define the lifecycle of the dependencies (e.g., Singleton, Scoped, Transient) and specify special behaviors, such as overriding implementations during testing. The discovery process dynamically registers these dependencies into the application's IoC (Inversion of Control) container.
+
+[Read more](./assembly-dependency-discovery.md)
+
 ## **Vertical/Feature Slices**
 
 In a **Vertical/Feature Slice** structure, code is organized by feature or business domain, grouping related components together.
