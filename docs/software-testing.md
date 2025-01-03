@@ -29,7 +29,7 @@ SUT.cs > When.cs > Given_Xx_Then/Should_Xx()
 
 Mocks often lead to less DRY code as the same Mock setup behavior might be implemented in different test classes to satisfy SUT.
 
-Stubs will quickly end up being Configurable Stubs or even Fakes with considerable logic to mimic the real class and will often require tests of the Stubs/Fakes it self.
+Stubs will quickly end up being Configurable Stubs or even Fakes with considerable logic to return specific objects based on given input parameters to mimic the real class. Such Configurable Stubs will require tests of the Stubs/Fakes it self.
 
 Tests using Configurable Stubs are however less verbose and easier to read/understand than tests using Mocks.
 
