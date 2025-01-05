@@ -27,10 +27,14 @@ SUT.cs > When.cs > Given_Xx_Then/Should_Xx()
 > - [Spy](http://xunitpatterns.com/Test%20Spy.html) Use a Test Double to capture the indirect output calls made to another component by the SUT for later verification by the test.
 > - [Mock](http://xunitpatterns.com/Mock%20Object.html) Replace an object the system under test (SUT) depends on with a test-specific object that verifies it is being used correctly by the SUT.
 
-Mocks often lead to less DRY code as the same Mock setup behavior might be implemented in different test classes to satisfy SUT.
+[Mocks and Stubs often breakes the encapsulation](https://blog.ploeh.dk/2022/10/17/stubs-and-mocks-break-encapsulation/) of interface contracts. That might not be a problem but often is. Therefore, rather use Fakes instead.
 
-Stubs will quickly end up being Configurable Stubs or even Fakes with considerable logic to return specific objects based on given input parameters to mimic the real class. Such Configurable Stubs will require tests of the Stubs/Fakes it self.
+[Fakes are more complex to implement](https://blog.ploeh.dk/2023/11/13/fakes-are-test-doubles-with-contracts/) as they have to obey the contract implied by the interface being faked, e.g. mainting in memory state.
 
-Tests using Configurable Stubs are however less verbose and easier to read/understand than tests using Mocks.
+Consider letting the Fake use a combination of Configurable Stub and Spy to store state and capture calls to the Fake object for easier setup and assertion in tests.
+
+Fakes are not easy to setup throwing exceptions, if that should at all be needed. [Mark Seeman has an article about this](https://blog.ploeh.dk/2024/02/26/testing-exceptions/). In this case the Configurable Stub can be used or simply use a Mock that single test case.
+
+Use AutoFixture to create Mocks and Fakes to keep code DRY and less verbose.
 
 [Humble Objects](http://xunitpatterns.com/Humble%20Object.html) are often needed to make code testable as some third-party libraries (like Azure) cannot be replaced by Test Doubles.
