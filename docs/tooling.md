@@ -5,7 +5,8 @@
 - Vue.js
 - .Net
   - (.Net Aspire)
-- Bicep over Terraform
+- Terraform over Bicep
+  - Use [tenv](https://github.com/tofuutils/tenv) for Terraform version management
 
 ## Platforms
 
