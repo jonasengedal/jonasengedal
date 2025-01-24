@@ -6,7 +6,8 @@ param(
 $chocoApps = @(
     'k9s', 
     'kubernetes-cli',
-    'openssl')
+    'openssl',
+    'tenv')
 
 $wingetApps = @(
     'Bruno.Bruno',
